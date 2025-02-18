@@ -12,7 +12,7 @@ import pandas as pd
 from time import time
 #functions for webscraping
 from bs4 import BeautifulSoup
-import urllib2
+import urllib.request
 
 #Change to the right folder & read in data to a dataframe
 chdir("/home/nestor/Documentos/Programación/Python/GET RICH SLOW - Step by step value investing with Python/2. Inv201 Collect & organise data for analysis using Python/Mkt_Val_Modell")
@@ -31,8 +31,8 @@ for i in range(0,len(colist)):
     #-------------------------------Scrape the data from the website & save to mcaplist---------------------
     try:
         header = {'User-Agent': 'Mozilla/5.0'} #Needed to prevent 403 error
-        req = urllib2.Request("http://www.zacks.com/stock/quote/" + colist['Symbol'][i],headers=header)
-        page = urllib2.urlopen(req)
+        req = urllib.Request("http://www.zacks.com/stock/quote/" + colist['Symbol'][i],headers=header)
+        page = urllib.request.urlopen(req)
         soup = BeautifulSoup(page, "lxml")
         for tr in soup.findAll("table", class_="abut_bottom"):
             for td in tr.find_all("td"):
@@ -44,8 +44,8 @@ for i in range(0,len(colist)):
     #-------------------------------status report while running---------------------------------------------
     t2 = time() - t1 #record the end time
     AveTime = (time() - StartTime) / (i+1) #total time elapsed / number of stocks evaluated, +1 because python starts at 0
-    print "%r of %r - %r -time taken:%r sec -Ave time:%r sec -time left:%r min/%r hr" % (i, len(colist), 
-     colist['Symbol'][i],round(t2,2),round(AveTime,2),round(AveTime*(len(colist) - i)/60,2),round(AveTime*(len(colist) - i)/60/60,2))    
+    print("%r of %r - %r -time taken:%r sec -Ave time:%r sec -time left:%r min/%r hr" % (i, len(colist), 
+     colist['Symbol'][i],round(t2,2),round(AveTime,2),round(AveTime*(len(colist) - i)/60,2),round(AveTime*(len(colist) - i)/60/60,2)))    
     #-------------------------------save in case of crash---------------------------------------------------
     #put the list in the dataframe  
     colist['mcap'] = mcaplist
