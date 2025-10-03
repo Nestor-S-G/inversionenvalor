@@ -12,13 +12,13 @@ etf_names <- c(
   "BTC-EUR" = "BTC/€", "BTC-USD" = "BTC/$", "ETH-EUR" = "ETH/€", "ETH-USD" = "ETH/$", "QDVP.DE" = "US MBS", "NUCL.L" = "Nuclear & Uranium",
   "DFEN.DE" = "Defense", "QNTM.L" = "Quantum Computing", "JEDI.L" = "Space Innovators", "ESPO.L" = "Videogaming & eSports",
   "REMX.L" = "Rare Earth & Stategic Metals", "HDRO.L" = "H2", "KRW.PA" = "Korea", "6C=F" = "Canadian Dollar",
-   "6A=F" = "Australian Dollar", "6N=F" = "New Zealand Dollar", "6M=F" = "Mexican Peso"
+   "6A=F" = "Australian Dollar", "6N=F" = "New Zealand Dollar", "6M=F" = "Mexican Peso", "IS0E.DE" = "Gold producers"
 )
 
 # Categoríes
 bonds <- c("SXRQ.DE", "IBCL.DE", "IBCI.DE", "IEAA.MI", "EUNW.DE", "VGIT", "TLT", "TIP", "IHYA.L", "QDVP.DE")
 equities <- c("IWDA.AS", "VUSA.DE", "LYP6.DE", "ZPRA.DE", "KRW.PA")
-equities_sector <- c("NUCL.L", "DFEN.DE", "QNTM.L", "JEDI.L", "ESPO.L", "REMX.L", "HDRO.L")
+equities_sector <- c("NUCL.L", "DFEN.DE", "QNTM.L", "JEDI.L", "ESPO.L", "REMX.L", "HDRO.L", "IS0E.DE")
 commodity_currencies <- c("6C=F", "6A=F", "6N=F", "6M=F")
 commodities <- c("ETLF.DE", "SGLD.AS", "XAD6.MI", "XAD3.MI", "SPDM.L")
 real_estate <- c("SPY2.DE", "EXI5.DE", "UKPH.DE", "AYEP.DE")
